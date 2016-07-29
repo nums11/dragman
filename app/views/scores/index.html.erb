@@ -8,9 +8,15 @@
 
 </div>
 
-<div class="game-area">
+<div class="game-area-outline">
+
+	<div class="game-area">
 	
-	<img class="drakes-head" src="https://upload.wikimedia.org/wikipedia/en/b/b9/Nothing_Was_the_Same_cover_2.png">
+		<img class="drakes-head" src="https://upload.wikimedia.org/wikipedia/en/b/b9/Nothing_Was_the_Same_cover_2.png">
+
+		<div class="obstacle"></div>
+
+	</div>
 
 </div>
 
@@ -37,7 +43,7 @@
 		font-size: 22px;
 	}
 
-	.game-area{
+	.game-area-outline{
 		border: solid #e60000;
 		height: 737px;
 		position: fixed;
@@ -50,7 +56,23 @@
 		width: 80px;
 		border-radius: 100%;
 		margin-top: 300px;
-		margin-left: 20px;
+		margin-left: 100px;
+		position: absolute;
+	}
+
+	.obstacle{
+		height: 100px;
+		width: 100px;
+		background-color: yellow;
+		margin-top: 300px;
+		margin-left: 400px;
+	}
+
+	.game-area{
+		border: solid yellow;
+		height: 735px;
+		width: 10000px;
+		position: fixed;
 	}
 
 </style>
@@ -60,6 +82,16 @@
 	var main = function() {
 
 		$('.drakes-head').draggable();
+
+		$('.drakes-head').click(function(){
+			var game = true
+
+				$('.game-area').animate({
+					left: '-200px'
+					}, 2500);
+				$('.game-area').width()+('1020px');
+
+		});
 
 	}	
 
