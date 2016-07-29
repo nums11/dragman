@@ -8,9 +8,15 @@
 
 </div>
 
+<div class="game-area">
+	
+	<img class="drakes-head" src="https://upload.wikimedia.org/wikipedia/en/b/b9/Nothing_Was_the_Same_cover_2.png">
+
+</div>
+
 <style type="text/css">
 	.info-bar{
-		border: solid yellow;
+		border: solid #e60000;
 		height: 50px;
 		position: fixed;
 		width: 1594px;
@@ -31,4 +37,29 @@
 		font-size: 22px;
 	}
 
+	.game-area{
+		border: solid #e60000;
+		height: 790px;
+	}
+
+	.drakes-head{
+		height: 80px;
+		width: 80px;
+		border-radius: 100%;
+		margin-top: 300px;
+		margin-left: 20px;
+	}
+
 </style>
+
+<script type="text/javascript">
+
+	var main = function() {
+
+		$('.drakes-head').draggable();
+
+	}	
+
+	$(document).ready(main);
+
+</script>
