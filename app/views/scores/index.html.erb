@@ -14,7 +14,19 @@
 	
 		<img class="drakes-head" src="https://upload.wikimedia.org/wikipedia/en/b/b9/Nothing_Was_the_Same_cover_2.png">
 
-		<div class="obstacle"></div>
+		<div class="music-note">
+			
+			<div class="top-line"></div>
+
+			<div class="left-line"></div>
+
+			<div class="right-line"></div>
+
+			<div class="bottom-left"></div>
+
+			<div class="bottom-right"></div>
+
+		</div>
 
 	</div>
 
@@ -60,14 +72,6 @@
 		position: absolute;
 	}
 
-	.obstacle{
-		height: 100px;
-		width: 100px;
-		background-color: yellow;
-		margin-top: 300px;
-		margin-left: 400px;
-	}
-
 	.game-area{
 		border: solid yellow;
 		height: 735px;
@@ -75,6 +79,50 @@
 		position: fixed;
 	}
 
+	.music-note{
+		margin-left: 400px;
+		position: absolute;
+		margin-top: 300px;
+	}
+
+	.top-line{
+		height: 10px;
+		width: 80px;
+		background-color: black;
+	}
+
+	.left-line{
+		height: 50px;
+		width: 10px;
+		background-color: black;
+	}
+
+	.right-line{
+		height: 50px;
+		width: 10px;
+		background-color: black;
+		left: 70px;
+		position: absolute;
+		top: 10px;
+	}
+
+	.bottom-left{
+		height: 30px;
+		width: 30px;
+		background-color: black;
+		border-radius: 100%;
+		margin-left: -18px;
+		margin-top: -8px;
+	}
+
+	.bottom-right{
+		height: 30px;
+		width: 30px;
+		background-color: black;
+		border-radius: 100%;
+		margin-left: 52px;
+		margin-top: -30px;		
+	}
 </style>
 
 <script type="text/javascript">
