@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  root 'users#new'
+  root 'users#new', as: :users
+  post 'users#new' => 'users#create'
+
+  get '/'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

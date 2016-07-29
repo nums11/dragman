@@ -1,0 +1,27 @@
+<div class="container">
+	
+	<div class="title">Dragman!</div>
+
+	<%= form_for @user do |x| %>
+		<%= x.text_field :nick_name, :placeholder => "Nickname", :style => "height:20px; width:300px; margin-left:250px; margin-top:150px; border-style: none none solid none; background-color:#00004d; color:white; font-size:16px; border-color:#e60000;" %>
+		<%= x.submit "Play", :style => "height:70px; width:300px; margin-top:220px; margin-left:-300px; position:absolute; border-radius:5px; font-size:40px; background-color:#e60000; border: solid #e60000; color:white; cursor:pointer;" %>
+	<% end %>
+
+
+</div>
+
+<style type="text/css">
+	.container{
+		margin: auto;
+		height: 600px;
+		width: 800px;
+		margin-top: 120px;
+	}
+
+	.title{
+		height: 100px;
+		font-size: 70px;
+		text-align: center;
+	}
+
+</style>
