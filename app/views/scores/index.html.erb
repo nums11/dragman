@@ -133,8 +133,8 @@
 	}
 
 	.drakes-head{
-		height: 70px;
-		width: 70px;
+		height: 65px;
+		width: 65px;
 		border-radius: 100%;
 		margin-top: 300px;
 		margin-left: 100px;
@@ -249,13 +249,20 @@
 		$('.drakes-head').draggable();
 
 		$('.drakes-head').click(function(){
-			var game = true
 
-				$('.game-area').animate({
-					left: '-5000px'
-					}, 14000);
 
-		});
+			$('.game-area').animate({
+				left: '-5000px'
+				}, 14000);
+
+			$('.music-note').hover(function(){
+				$(this).toggle('explode');
+				$('.game-area').stop();
+			});		
+
+
+
+		});		
 
 	}	
 
