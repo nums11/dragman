@@ -14,19 +14,88 @@
 	
 		<img class="drakes-head" src="https://upload.wikimedia.org/wikipedia/en/b/b9/Nothing_Was_the_Same_cover_2.png">
 
-		<div class="music-note">
-			
-			<div class="top-line"></div>
+		<div class="note-area-outline">
 
-			<div class="left-line"></div>
 
-			<div class="right-line"></div>
+		<% 20.times do %>	
+			<div class="note-area">
 
-			<div class="bottom-left"></div>
+				<% random_number_one = rand(1..2) %>
+				<% random_number_two = rand(3..4) %>
+				<% random_number_three = rand(5..6) %>
 
-			<div class="bottom-right"></div>
 
-		</div>
+				<% if random_number_one == 1 %>
+
+					<div class="music-note" id="one">			
+						<div class="top-line"></div>
+						<div class="left-line"></div>
+						<div class="right-line"></div>
+						<div class="bottom-left"></div>
+						<div class="bottom-right"></div>
+					</div>
+
+				<% else %>
+
+					<div class="music-note" id="two">			
+						<div class="top-line"></div>
+						<div class="left-line"></div>
+						<div class="right-line"></div>
+						<div class="bottom-left"></div>
+						<div class="bottom-right"></div>
+					</div>
+
+				<% end %>
+
+
+				<% if random_number_two == 3 %>
+
+					<div class="music-note" id="three">			
+						<div class="top-line"></div>
+						<div class="left-line"></div>
+						<div class="right-line"></div>
+						<div class="bottom-left"></div>
+						<div class="bottom-right"></div>
+					</div>
+
+				<% else %>
+
+					<div class="music-note" id="four">			
+						<div class="top-line"></div>
+						<div class="left-line"></div>
+						<div class="right-line"></div>
+						<div class="bottom-left"></div>
+						<div class="bottom-right"></div>
+					</div>
+
+				<% end %>
+
+				<% if random_number_three == 5 %>
+
+					<div class="music-note" id="five">			
+						<div class="top-line"></div>
+						<div class="left-line"></div>
+						<div class="right-line"></div>
+						<div class="bottom-left"></div>
+						<div class="bottom-right"></div>
+					</div>
+
+				<% else %>
+
+					<div class="music-note" id="six">			
+						<div class="top-line"></div>
+						<div class="left-line"></div>
+						<div class="right-line"></div>
+						<div class="bottom-left"></div>
+						<div class="bottom-right"></div>
+					</div>
+
+				<% end %>
+
+			</div>
+		<% end %>
+	
+		</div>	
 
 	</div>
 
@@ -64,8 +133,8 @@
 	}
 
 	.drakes-head{
-		height: 80px;
-		width: 80px;
+		height: 70px;
+		width: 70px;
 		border-radius: 100%;
 		margin-top: 300px;
 		margin-left: 100px;
@@ -73,10 +142,21 @@
 	}
 
 	.game-area{
-		border: solid yellow;
 		height: 735px;
 		width: 10000px;
 		position: fixed;
+	}
+
+	.note-area-outline{
+		height: 732px;
+		width: 100%;
+		margin-left: 300px;
+	}
+
+	.note-area{
+		height: 732px;
+		width: 300px;
+		display: inline-block;
 	}
 
 	.music-note{
@@ -123,6 +203,43 @@
 		margin-left: 52px;
 		margin-top: -30px;		
 	}
+
+	.obstacle{
+		height: 100px;
+		width: 100px;
+		border: yellow solid;
+		position: absolute;
+	}
+
+	#one{
+		margin-top: 0px;
+		margin-left: 0px;
+	}
+
+	#two{
+		margin-top: 100px;
+		margin-left: 120px;
+	}
+
+	#three{
+		margin-top: 250px;
+		margin-left: 10px;
+	}
+
+	#four{
+		margin-top: 350px;
+		margin-left: 50px;
+	}
+
+	#five{
+		margin-top: 475px;
+		margin-left: 0px;
+	}
+
+	#six{
+		margin-top: 600px;
+		margin-left: 100px;
+	}
 </style>
 
 <script type="text/javascript">
@@ -135,9 +252,8 @@
 			var game = true
 
 				$('.game-area').animate({
-					left: '-200px'
-					}, 2500);
-				$('.game-area').width()+('1020px');
+					left: '-5000px'
+					}, 14000);
 
 		});
 
