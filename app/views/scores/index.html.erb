@@ -4,13 +4,13 @@
 
 	<%= link_to 'Help', "/help", :style => "color:white; text-decoration:none; margin-left:795px; margin-top:-50px; position:absolute;" %>
 
-	<div class="score">Score: </div>
+	<div class="score-outline"> Score:<div id="score">0</div></div>
 
 </div>
 
 <div class="game-area-outline">
 
-	<div class="game-area">
+	<div id="game-area">
 	
 		<img class="drakes-head" src="https://upload.wikimedia.org/wikipedia/en/b/b9/Nothing_Was_the_Same_cover_2.png">
 
@@ -114,14 +114,22 @@
 		margin-left: 50px;
 	}
 
-	.score{
-		border: solid green;
+	.score-outline{
 		float: right;
 		height: 30px;
-		width: 120px;
+		width: 140px;
 		margin-top: -55px;
 		margin-right: 50px;
 		font-size: 22px;
+	}
+
+	#score{
+		position: absolute;
+		height: 30px;
+		width: 40px;
+		float: right;
+		margin-left: 80px;
+		margin-top: -30px;
 	}
 
 	.game-area-outline{
@@ -141,7 +149,7 @@
 		position: absolute;
 	}
 
-	.game-area{
+	#game-area{
 		height: 735px;
 		width: 10000px;
 		position: fixed;
@@ -251,16 +259,24 @@
 		$('.drakes-head').click(function(){
 
 
-			$('.game-area').animate({
+			$('#game-area').animate({
 				left: '-5000px'
 				}, 14000);
 
+ 			var score = 0;
+     		window.setInterval(
+     		function countscore() {
+     		if($('#game-area').is(':animated')){	
+         		score = score + 1;
+         		document.getElementById("score").innerHTML = score;}
+
+     		}, 1000); 
+
+
 			$('.music-note').hover(function(){
 				$(this).toggle('explode');
-				$('.game-area').stop();
-			});		
-
-
+				$('#game-area').stop();
+			});		     		
 
 		});		
 
