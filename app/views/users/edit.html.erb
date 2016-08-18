@@ -1,3 +1,10 @@
+<audio id="digitaldash" src="Drake Ft Future - Digital Dash.mp3" autoplay></audio>
+<audio id="hotlinebling" src="Drake - Hotline Bling (Instrumental) (ReProd. By JDPRODUCTIONS).mp3"></audio>
+<audio id="lfmg" src="Drake & Future - Live From The Gutter (Instrumental).mp3"></audio>
+<audio id="big-rings" src="Drake ft. Future - Big Rings Instrumental.mp3"></audio>
+<audio id="itp" src="Drake & Future - I'm The Plug -INSTRUMENTAL-.mp3"></audio>
+<audio id="jumpman" src="Drake & Future - Jumpman (instrumental) (ReProd. by Dj Swish) - WATTBA.mp3"></audio>
+
 <div class="info-bar">
 	
 	<h1>Dragman</h1>
@@ -112,6 +119,37 @@
 	var main = function() {
 
 		$('.drakes-head').draggable();
+
+		var dd = document.getElementById('digitaldash');
+		var hb = document.getElementById('hotlinebling');
+		var lfmg = document.getElementById('lfmg');
+		var br = document.getElementById('big-rings');
+		var itp = document.getElementById('itp');
+		var jp = document.getElementById('jumpman');
+
+		dd.onended = function(){
+			hb.play();
+		}
+
+		hb.onended = function(){
+			lfmg.play();
+		}
+
+		lfmg.onended = function(){
+			br.play();
+		}
+
+		br.onended = function(){
+			itp.play();
+		}
+
+		itp.onended = function(){
+			jp.play();
+		}
+
+		jp.onended = function(){
+			dd.play();
+		}
 
 		$('.drakes-head').click(function(){
 
