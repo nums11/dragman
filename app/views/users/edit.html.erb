@@ -4,18 +4,18 @@
 
 	<%= link_to 'Help', "/help", :style => "color:white; text-decoration:none; margin-left:795px; margin-top:-50px; position:absolute;" %>
 
-	<div class="score-outline"> Score:<div id="score">0</div></div>
 
 </div>
 
 <div class="game-area-outline">
 
 	<div id="game-area">
+
+		<div class="click-drake">Click Drake To begin ↓</div>
 	
 		<img class="drakes-head" src="https://upload.wikimedia.org/wikipedia/en/b/b9/Nothing_Was_the_Same_cover_2.png">
 
-		<div class="note-area-outline">
-
+		<div class="note-area-outline">		
 
 		<% 20.times do %>	
 			<div class="note-area">
@@ -100,155 +100,12 @@
 	</div>
 
 </div>
-
-<style type="text/css">
-	.info-bar{
-		border: solid #e60000;
-		height: 50px;
-		position: fixed;
-		width: 1594px;
-	}
-
-	h1{
-		margin-top: -4px;
-		margin-left: 50px;
-	}
-
-	.score-outline{
-		float: right;
-		height: 30px;
-		width: 140px;
-		margin-top: -55px;
-		margin-right: 50px;
-		font-size: 22px;
-	}
-
-	#score{
-		position: absolute;
-		height: 30px;
-		width: 40px;
-		float: right;
-		margin-left: 80px;
-		margin-top: -30px;
-	}
-
-	.game-area-outline{
-		border: solid #e60000;
-		height: 737px;
-		position: fixed;
-		margin-top: 55px;
-		width: 1594px;
-	}
-
-	.drakes-head{
-		height: 65px;
-		width: 65px;
-		border-radius: 100%;
-		margin-top: 300px;
-		margin-left: 100px;
-		position: absolute;
-	}
-
-	#game-area{
-		height: 735px;
-		width: 10000px;
-		position: fixed;
-	}
-
-	.note-area-outline{
-		height: 732px;
-		width: 100%;
-		margin-left: 300px;
-	}
-
-	.note-area{
-		height: 732px;
-		width: 300px;
-		display: inline-block;
-	}
-
-	.music-note{
-		margin-left: 400px;
-		position: absolute;
-		margin-top: 300px;
-	}
-
-	.top-line{
-		height: 10px;
-		width: 80px;
-		background-color: black;
-	}
-
-	.left-line{
-		height: 50px;
-		width: 10px;
-		background-color: black;
-	}
-
-	.right-line{
-		height: 50px;
-		width: 10px;
-		background-color: black;
-		left: 70px;
-		position: absolute;
-		top: 10px;
-	}
-
-	.bottom-left{
-		height: 30px;
-		width: 30px;
-		background-color: black;
-		border-radius: 100%;
-		margin-left: -18px;
-		margin-top: -8px;
-	}
-
-	.bottom-right{
-		height: 30px;
-		width: 30px;
-		background-color: black;
-		border-radius: 100%;
-		margin-left: 52px;
-		margin-top: -30px;		
-	}
-
-	.obstacle{
-		height: 100px;
-		width: 100px;
-		border: yellow solid;
-		position: absolute;
-	}
-
-	#one{
-		margin-top: 0px;
-		margin-left: 0px;
-	}
-
-	#two{
-		margin-top: 100px;
-		margin-left: 120px;
-	}
-
-	#three{
-		margin-top: 250px;
-		margin-left: 10px;
-	}
-
-	#four{
-		margin-top: 350px;
-		margin-left: 50px;
-	}
-
-	#five{
-		margin-top: 475px;
-		margin-left: 0px;
-	}
-
-	#six{
-		margin-top: 600px;
-		margin-left: 100px;
-	}
-</style>
+<div class="score-outline">Score:
+	<%= form_for @user do |x|%>
+		<%= x.number_field :score, :id => "score", :style => "font-size:24px; width:100px; background-color:#00004d; color:white; border:none;" %>
+		<div class="game-over"><%= x.submit "Game Over", :style => 'text-decoration:none; color:white; border:none; font-size:134px; background:none; font-family:cursive; position:absolute; cursor:pointer;' %></div>
+	<% end %>
+</div>
 
 <script type="text/javascript">
 
@@ -258,24 +115,28 @@
 
 		$('.drakes-head').click(function(){
 
+			$('.click-drake').addClass('none');
 
 			$('#game-area').animate({
 				left: '-5000px'
-				}, 14000);
+				}, 10000);
 
  			var score = 0;
      		window.setInterval(
      		function countscore() {
-     		if($('#game-area').is(':animated')){	
-         		score = score + 1;
-         		document.getElementById("score").innerHTML = score;}
+     			if($('#game-area').is(':animated')){
+         			score = score + 1;
+         			document.getElementById("score").value = score;         			
+           		}
 
-     		}, 1000); 
+     		}, 100); 
 
 
 			$('.music-note').hover(function(){
 				$(this).toggle('explode');
 				$('#game-area').stop();
+				$('.game-over').addClass('unset');
+				$('#game-area').fadeTo(1000,0.2);
 			});		     		
 
 		});		

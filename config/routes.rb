@@ -2,7 +2,11 @@ Rails.application.routes.draw do
   root 'users#new', as: :users
   post '/' => 'users#create'
 
-  get '/play' => 'scores#index'
+  get '/logout' => 'sessions#destroy'
+
+  get '/play' => 'users#edit', as: :user 
+  patch '/play' => 'users#update'
+  get '/leaderboard' => 'scores#leaderboard'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

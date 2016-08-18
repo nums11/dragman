@@ -1,5 +1,14 @@
 class ScoresController < ApplicationController
+	before_action :require_user, only: [:index]
+
 	def index
-		@score = current_user.score
+		@user = User.find(current_user)		
+		@score = @user.score
+		@score = 0
 	end
+
+	def leaderboard
+		@users = User.all
+	end
+
 end
