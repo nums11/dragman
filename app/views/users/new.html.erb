@@ -7,8 +7,8 @@
 	<div class="title">Dragman!</div>
 
 	<%= form_for @user do |x| %>
-		<%= x.text_field :nick_name, :placeholder => "Nickname", :style => "height:20px; width:300px; margin-left:250px; margin-top:150px; border-style: none none solid none; background-color:#00004d; color:white; font-size:16px; border-color:#e60000;" %>
-		<%= x.submit "Play", :style => "height:70px; width:300px; margin-top:220px; margin-left:-300px; position:absolute; border-radius:5px; font-size:40px; background-color:#e60000; border: solid #e60000; color:white; cursor:pointer;" %>
+		<%= x.text_field :nick_name, :placeholder => "Nickname", :class => "nick-name", :style => "height:20px; width:300px; margin-left:250px; margin-top:150px; background-color:#00004d; color:white; font-size:16px;" %>
+		<%= x.submit "Play", :class => "btn", :style => "height:70px; width:300px; margin-top:220px; margin-left:-300px; position:absolute; border-radius:5px; font-size:40px; color:white; cursor:pointer;" %>
 	<% end %>
 </div>
 
@@ -26,5 +26,40 @@
 		text-align: center;
 	}
 
+	.nick-name{
+		border-style: none none solid none;
+		border-color:#e60000;
+	}
+
+	.btn{
+		background-color: #e60000;
+		border: solid #e60000;
+		box-shadow: 0px 2px 25px black;
+	}
+
+	.btn:hover{
+		background-color: #ff4d4d;
+		border: solid #ff4d4d;
+	}
+
+	.btn:active{
+		background-color: #800000;
+		border: solid #800000;
+	}
+
+	.lighter{
+		border-color: #ff8080;
+	}
+
 </style>
+
+<script type="text/javascript">
+	var main = function(){
+		$('.nick-name').click(function(){
+			$(this).toggleClass('lighter');
+		});
+	}
+
+	$(document).ready(main);
+</script>
 

@@ -2,15 +2,19 @@
 		
 		<h1>Leader Board</h1>
 
-		<div class="user-outline">
+		<ol class="user-outline">
 			
-			<% @users.each do |x| %>			
-				<div class="user">
-					<div class= "nick-name"><%= x.nick_name %></div><div class="score"> Score: <%= x.score %></div>
+			<% @users.each do |x| %>
+				<div class="user">	
+				<li class="user-li">
+					<div class= "nick-name"><%= x.nick_name %></div>
+					<div class="score">Score:</div>
+					<div class="score-number"><%= x.score %></div>
+				</li>
 				</div>
 			<% end %>
 
-		</div>
+		</ol>
 
 		<div class="submit"><%= link_to 'Done', "/logout", :style => "text-decoration:none; color:white; font-size:22px; margin-top:12px;" %></div>
 

@@ -1,5 +1,5 @@
-<audio id="digitaldash" src="Drake Ft Future - Digital Dash.mp3" autoplay></audio>
-<audio id="hotlinebling" src="Drake - Hotline Bling (Instrumental) (ReProd. By JDPRODUCTIONS).mp3"></audio>
+<audio id="hotlinebling" src="Drake - Hotline Bling (Instrumental) (ReProd. By JDPRODUCTIONS).mp3" autoplay></audio>
+<audio id="digitaldash" src="Drake Ft Future - Digital Dash.mp3"></audio>
 <audio id="lfmg" src="Drake & Future - Live From The Gutter (Instrumental).mp3"></audio>
 <audio id="big-rings" src="Drake ft. Future - Big Rings Instrumental.mp3"></audio>
 <audio id="itp" src="Drake & Future - I'm The Plug -INSTRUMENTAL-.mp3"></audio>
@@ -24,7 +24,7 @@
 
 		<div class="note-area-outline">		
 
-		<% 20.times do %>	
+		<% 80.times do %>	
 			<div class="note-area">
 
 				<% random_number_one = rand(1..2) %>
@@ -118,20 +118,18 @@
 
 	var main = function() {
 
-		$('.drakes-head').draggable();
-
-		var dd = document.getElementById('digitaldash');
 		var hb = document.getElementById('hotlinebling');
+		var dd = document.getElementById('digitaldash');
 		var lfmg = document.getElementById('lfmg');
 		var br = document.getElementById('big-rings');
 		var itp = document.getElementById('itp');
 		var jp = document.getElementById('jumpman');
 
-		dd.onended = function(){
-			hb.play();
+		hb.onended = function(){
+			dd.play();
 		}
 
-		hb.onended = function(){
+		dd.onended = function(){
 			lfmg.play();
 		}
 
@@ -148,17 +146,24 @@
 		}
 
 		jp.onended = function(){
-			dd.play();
+			hb.play();
 		}
 
 		$('.drakes-head').click(function(){
 
 			$('.click-drake').addClass('none');
+			$(this).addClass('none');
+
+			var speed = 45000;	
+			window.setInterval(
+				for(time = 0; time < 15; time ++)
+
+			}, 1000);
 
 			$('#game-area').animate({
-				left: '-5000px'
-				}, 10000);
-
+				left: '-20000px'
+			}, speed);			
+	
  			var score = 0;
      		window.setInterval(
      		function countscore() {

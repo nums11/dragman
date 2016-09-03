@@ -8,7 +8,7 @@ class ScoresController < ApplicationController
 	end
 
 	def leaderboard
-		@users = User.all
+		@users = User.all.order(:score).reverse_order.limit(10)
 	end
 
 end
