@@ -21,10 +21,11 @@ class UsersController < ApplicationController
 
 	def update
 		@user = User.find(current_user)
-		if @user.update(user_params)
+		@score = @user.score
+		if @user.update(user_params)	
 			redirect_to '/leaderboard'
 		else
-			render '/play'
+			redirect_to '/leaderboard'
 		end
 	end
 

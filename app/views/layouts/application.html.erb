@@ -12,6 +12,7 @@
 	html,body{
 		margin: 0;
 		padding: 0;
+		overflow: hidden;
 	}
 
 	body{
@@ -181,29 +182,30 @@
 		float: left;
 		margin-left: -1300px;
 		margin-top: 184px;
-		z-index: 1;
+		z-index: 5;
 		margin-top: 200px;
 		display: none;
 	}
 
 	#game-area{
 		height: 735px;
-		width: 20000px;
+		width: 100000px;
 		position: fixed;
 		cursor: url(http://1hiphopucit.com/wp-content/uploads/2011/08/drake-shades-64x64.jpg), auto;
 	}
 
 	.note-area-outline{
-		height: 732px;
+		height: 724px;
 		width: 100%;
 		margin-left: 300px;
 		position: absolute;
 	}
 
 	.note-area{
-		height: 732px;
+		height: 720px;
 		width: 300px;
 		display: inline-block;
+		margin-top: 10px;
 	}
 
 	.music-note{
@@ -213,47 +215,47 @@
 	}
 
 	.top-line{
-		height: 10px;
-		width: 80px;
+		height: 8px;
+		width: 50px;
 		background-color: black;
-		box-shadow: 15px 15px 5px black;
+		box-shadow: 15px 17px 5px black;
 	}
 
 	.left-line{
-		height: 50px;
-		width: 10px;
+		height: 30px;
+		width: 8px;
 		background-color: black;
-		box-shadow: 15px 15px 5px black;
+		box-shadow: 15px 17px 5px black;
 	}
 
 	.right-line{
-		height: 50px;
-		width: 10px;
+		height: 30px;
+		width: 8px;
 		background-color: black;
-		left: 70px;
+		left: 42px;
 		position: absolute;
-		top: 10px;
-		box-shadow: 15px 15px 5px black;
+		top: 5px;
+		box-shadow: 15px 17px 5px black;
 	}
 
 	.bottom-left{
-		height: 30px;
-		width: 30px;
+		height: 22px;
+		width: 22px;
 		background-color: black;
 		border-radius: 100%;
-		margin-left: -18px;
+		margin-left: -14px;
 		margin-top: -8px;
-		box-shadow: 15px 15px 5px black;
+		box-shadow: 15px 17px 5px black;
 	}
 
 	.bottom-right{
-		height: 30px;
-		width: 30px;
+		height: 22px;
+		width: 22px;
 		background-color: black;
 		border-radius: 100%;
-		margin-left: 52px;
-		margin-top: -30px;	
-		box-shadow: 15px 15px 5px black;	
+		margin-left: 29px;
+		margin-top: -22px;	
+		box-shadow: 15px 17px 5px black;	
 	}
 
 	.obstacle{
@@ -263,34 +265,184 @@
 		position: absolute;
 	}
 
-	#one{
+	#set-one-one{
 		margin-top: 0px;
 		margin-left: 0px;
 	}
 
-	#two{
+	#set-one-two{
 		margin-top: 100px;
 		margin-left: 120px;
 	}
 
-	#three{
+	#set-one-three{
 		margin-top: 250px;
 		margin-left: 10px;
 	}
 
-	#four{
+	#set-one-four{
 		margin-top: 350px;
 		margin-left: 50px;
 	}
 
-	#five{
+	#set-one-five{
 		margin-top: 475px;
 		margin-left: 0px;
 	}
 
-	#six{
+	#set-one-six{
 		margin-top: 600px;
 		margin-left: 100px;
+	}
+
+	#set-two-one{
+		margin-left: 35px;
+		margin-top: 0px;
+	}
+
+	#set-two-two{
+		margin-top: 100px;
+		margin-left: 140px;
+	}
+
+	#set-two-three{
+		margin-top: 220px;
+		margin-left: 100px;
+	}
+
+	#set-two-four{
+		margin-top: 290px;
+		margin-left: 50px;
+	}
+
+	#set-two-five{
+		margin-top: 350px;
+		margin-left: 180px;
+	}
+
+	#set-two-six{
+		margin-top: 440px;
+		margin-left: 120px;
+	}
+
+	#set-two-seven{
+		margin-top: 540px;
+		margin-left: 30px;
+	}
+
+	#set-two-eight{
+		margin-top: 620px;
+		margin-left: 80px;
+	}
+
+	#set-three-one{
+		margin-top: 0px;
+		margin-left: 160px;
+	}
+
+	#set-three-two{
+		margin-top: 60px;
+		margin-left: 20px;
+	}
+
+	#set-three-three{
+		margin-top: 130px;
+		margin-left: 200px;
+	}
+
+	#set-three-four{
+		margin-top: 200px;
+		margin-left: 100px;
+	}
+
+	#set-three-five{
+		margin-top: 270px;
+		margin-left: 10px;
+	}
+
+	#set-three-six{
+		margin-top: 340px;
+		margin-left: 175px;
+	}
+
+	#set-three-seven{
+		margin-top: 410px;
+		margin-left: 60px;
+	}
+
+	#set-three-eight{
+		margin-top: 480px;
+		margin-left: 20px;
+	}
+
+	#set-three-nine{
+		margin-top: 550px;
+		margin-left: 200px;
+	}
+
+	#set-three-ten{
+		margin-top: 620px;
+		margin-left: 80px;
+	}
+
+	#set-four-one{
+		margin-top: -5px;
+		margin-left: 40px;
+	}
+
+	#set-four-two{
+		margin-top: 55px;
+		margin-left: 220px;
+	}
+
+	#set-four-three{
+		margin-top: 110px;
+		margin-left: 120px;
+	}
+
+	#set-four-four{
+		margin-top: 160px;
+		margin-left: 190px;
+	}
+
+	#set-four-five{
+		margin-top: 250px;
+		margin-left: 90px;
+	}
+
+	#set-four-six{
+		margin-top: 320px;
+		margin-left: 160px;
+	}
+
+	#set-four-seven{
+		margin-top: 380px;
+		margin-left: 10px;
+	}
+
+	#set-four-eight{
+		margin-top: 430px;
+		margin-left: 210px;
+	}
+
+	#set-four-nine{
+		margin-top: 490px;
+		margin-left: 135px;
+	}
+
+	#set-four-ten{
+		margin-top: 530px;
+		margin-left: 0px;
+	}
+
+	#set-four-eleven{
+		margin-top: 590px;
+		margin-left: 120px;
+	}
+
+	#set-four-twelve{
+		margin-top: 640px;
+		margin-left: 200px;
 	}
 
 	.unset{
